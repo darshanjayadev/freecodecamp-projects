@@ -1,53 +1,63 @@
-body{
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+	 License: none (public domain)
+	 CSS RESET
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
-	background: #EAEAEA;
-	text-align: center;
-	font-family: monospace;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-h1{
-	margin-bottom: 0;
-	color: #096400;
-	font-family: "Courier New";
-	font-weight: 400;
-	font-size: 3em;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-a{
-	all:unset;
+body {
+	line-height: 1;
 }
-.tweet{
-	color: #7F7F7F;
+ol, ul {
+	list-style: none;
 }
-.tweet:hover{
-	color: #000;
-	cursor: pointer;
+blockquote, q {
+	quotes: none;
 }
-/*Grid Container*/
-.container{
-	margin: 50px 20px;
-	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
 
-/*Grid Items*/
-.cards{
-	background: #FEFEFE;
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 1px -2px rgba(0,0,0,0.2), 0 1px 2px 0 rgba(0,0,0,0.12);
-	display: grid;
-	padding-top: 50px;
+/* TYPOGRAPHY */
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
 }
-.cards>div{
-	font-size: 1.7em;
-	padding-bottom: 50px;
-	align-self: center; 
+
+/* LAYOUT */
+
+.container {
+	padding: 1rem;
 }
-.cards>a{
-	align-self:end;
-	padding: 10px;
-	font-size: 1.5em;
-	font-style: italic;
-}
-.cards>a:hover{
-	background: #7F7F7F;
-	color: #fff;
+
+.project-item {
+	margin: 1rem;
 }
