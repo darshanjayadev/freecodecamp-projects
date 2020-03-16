@@ -2,23 +2,23 @@
   "projects" : [
     {
       "title": "Tribute Page v1",
-      "link": "https://juzqrios.github.io/freecodecamp-projects/tribute-page-v1/index.html"
+      "link": "./tribute-page-v1/index.html"
     },
     {
       "title": "Tribute Page v2",
-      "link": "https://juzqrios.github.io/freecodecamp-projects/tribute-page-v2/index.html"
+      "link": "./tribute-page-v2/index.html"
     },
     {
       "title": "Survey Form",
-      "link": "https://juzqrios.github.io/freecodecamp-projects/survey-form/index.html"
+      "link": "./survey-form/index.html"
     },
     {
       "title": "Personal Portfolio",
-      "link": "https://juzqrios.github.io/freecodecamp-projects/personal-portfolio/index.html"
+      "link": "./personal-portfolio/index.html"
     },
     {
       "title": "Random Quote Machine",
-      "link": "https://juzqrios.github.io/freecodecamp-projects/random-quote-machine/index.html"
+      "link": "./random-quote-machine/index.html"
     }
   ]
 }
