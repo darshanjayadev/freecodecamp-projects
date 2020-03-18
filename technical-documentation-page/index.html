@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+<nav id="navbar">
+  <header>
+    <h1>Game Engine</h1>
+  </header>
+  <ul>
+    <li>
+      <a href="#why" class="nav-link">Why</a>
+    </li>
+    <li>
+      <a href="#2d" class="nav-link">2D</a>
+    </li>
+    <li>
+      <a href="#3d" class="nav-link">3D</a>
+    </li>
+    <li>
+      <a href="#audio" class="nav-link">Audio</a>
+    </li>
+    <li>
+      <a href="#physics" class="nav-link">Physics</a>
+    </li>
+    <li>
+      <a href="#animation" class="nav-link">Animation</a>
+    </li>
+    <li>
+      <a href="#gui" class="nav-link">GUI</a>
+    </li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="why">
+    <header>
+      <h3>Why</h3>
+    </header>
+    <p>
+      It's easier to get started on your Game Design idea.
+    </p>
+    <p>
+      Below content is from <a href="https://docs.godotengine.org/en/stable/index.html">Godot Engine's Docs</a> because I'm lazy to write pretend documentation and/or dislike to use lorem ipsum.
+    </p>
+    <p>Web Page Design is pretty much the same as from demo, I might make changes later.</p>
+    <p>I think it's better if content is stored seperate from HTML like in Markdown or JSON format, as that would make it easier to manage both HTML & Content</p>
+  </section>
+  <section class="main-section" id="2d">
+    <header>
+      <h3>2D</h3>
+    </header>
+    <p>
+      Usually though, we don’t want everything in the game or app to be subject to the canvas transform. Examples of this are:
+    </p>
+    <ul>
+      <li>
+        Parallax Backgrounds: Backgrounds that move slower than the rest of the stage.
+      </li>
+      <li>
+        UI: Think of a user interface (UI) or Heads-up display (HUD) superimposed on our view of the game world. We want a life counter, score display and other elements to retain their screen positions even when our view of the game world is changing.
+      </li>
+      <li>
+        Transitions: We may want visual effects used for transitions (fades, blends) to remain at a fixed screen location.
+      </li>
+    </ul>
+    <pre>
+      <code>
+extends KinematicBody2D
+
+export (int) var speed = 200
+
+var velocity = Vector2()
+
+func get_input():
+    velocity = Vector2()
+    if Input.is_action_pressed('right'):
+        velocity.x += 1
+    if Input.is_action_pressed('left'):
+        velocity.x -= 1
+    if Input.is_action_pressed('down'):
+        velocity.y += 1
+    if Input.is_action_pressed('up'):
+        velocity.y -= 1
+    velocity = velocity.normalized() * speed
+
+func _physics_process(delta):
+    get_input()
+    velocity = move_and_slide(velocity)
+</code>
+</pre>
+  </section>
+  <section class="main-section" id="3d">
+    <header>
+      <h3>3D</h3>
+    </header>
+    <p>
+      Creating a 3D game can be challenging. That extra Z coordinate makes many of the common techniques that helped to make 2D games simple no longer work. To aid in this transition, it is worth mentioning that Godot uses similar APIs for 2D and 3D. Most nodes are the same and are present in both 2D and 3D versions. In fact, it is worth checking the 3D platformer tutorial, or the 3D kinematic character tutorials, which are almost identical to their 2D counterparts.
+    </p>
+    <p>
+      The Y coordinate is used for “up”, though for most objects that need alignment (like lights, cameras, capsule collider, vehicle, etc.), the Z axis is used as a “pointing towards” direction. This convention roughly means that:
+    </p>
+    <ul>
+      <li>
+        X is sides
+      </li>
+      <li>
+        Y is up/down
+      </li>
+      <li>
+        Z is front/back
+      </li>
+    </ul>
+  </section>
+  <section class="main-section" id="audio">
+    <header>
+      <h3>Audio</h3>
+    </header>
+    <p>
+      In any application or game, sound and music playback will have a slight delay. For games, this delay is often so small that it is negligible. Sound effects will come out a few milliseconds after any play() function is called. For music this does not matter as in most games it does not interact with the gameplay.
+    </p>
+    <pre>
+        <code>
+var time_begin
+var time_delay
+
+func _ready()
+    time_begin = OS.get_ticks_usec()
+    time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
+    $Player.play()
+
+func _process(delta):
+    # Obtain from ticks.
+    var time = (OS.get_ticks_usec() - time_begin) / 1000000.0
+    # Compensate for latency.
+    time -= time_delay
+    # May be below 0 (did not being yet).
+    time = max(0, time)
+    print("Time is: ", time)
+        </code>
+      </pre>
+  </section>
+  <section class="main-section" id="physics">
+    <header>
+      <h3>Physics</h3>
+    </header>
+    <p>
+      To detect the overlap, we’ll connect the appropriate signal on the Area2d. Which signal to use depends on the player’s node type. If the player is another area, use area_entered. However, let’s assume our player is a KinematicBody2D (and therefore a CollisionObject2D type), so we’ll connect the body_entered signal.
+    </p>
+    <pre>
+      <code>
+public class Coin : Area2D
+{
+
+    public void OnCoinBodyEntered(PhysicsBody2D body)
+    {
+        QueueFree();
+    }
+}
+      </code>
+      </pre>
+  </section>
+  <section class="main-section" id="animation">
+    <header>
+      <h3>Animation</h3>
+    </header>
+    <p>
+      In Godot, you can animate anything available in the Inspector, such as Node transforms, sprites, UI elements, particles, visibility and color of materials, and so on. You can also modify values of script variables and call any function.
+    </p>
+  </section>
+  <section class="main-section" id="gui">
+    <header>
+      <h3>GUI</h3>
+    </header>
+    <p>
+      Godot’s user interface uses these kinds of control with the default theme, but they can be skinned to resemble pretty much any kind of user interface.
+    </p>
+    <pre>
+      <code>
+var t = Theme.new()
+t.set_color("font_color", "Label", Color(1.0, 1.0, 1.0))
+
+var l = Label.new()
+l.set_theme(t)
+      </code>
+      </pre>
+    <pre>
+      <code>
+var l = Label.new()
+l.add_color_override("font_color", Color(1.0, 1.0, 1.0))
+      </code>
+      </pre>
+  </section>
+</main>
+</body>
+</html>
