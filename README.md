@@ -9,6 +9,9 @@
 <p align="center">
   <a href="https://juzqrios.netlify.com/">Live Demo</a>
 </p>
+<p align="center">
+  <a href="https://www.figma.com/community/file/902504457634655831/freeCodeCamp-Projects">Figma Design</a>
+</p>
 
 ## Built With
 
