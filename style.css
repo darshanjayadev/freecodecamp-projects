@@ -44,6 +44,18 @@ q:before, q:after {
 	content: none;
 }
 
+
+/* THEME */
+
+body {
+	background-color: #0D0D0D;
+	color: #F2B705;
+}
+
+header h1>*{
+	color: #04BF68;
+}
+
 /* TYPOGRAPHY */
 
 h1 {
