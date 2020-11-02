@@ -1,0 +1,20 @@
+{
+  "name": "freecodecamp-projects",
+  "version": "1.0.0",
+  "description": "> All freeCodeCamp projects in one place, updated as I work through the challenges.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd _landing-page && npm run-script build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juzQrios/freecodecamp-projects.git"
+  },
+  "author": "juzQrios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juzQrios/freecodecamp-projects/issues"
+  },
+  "homepage": "https://github.com/juzQrios/freecodecamp-projects#readme"
+}
