@@ -1,12 +1,17 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
+import "normalize.css";
 import "./App.css";
+
+import Header from "./Components/Header/Header";
 
 class App extends Component{
   render(){
     return(
       <div className="App">
-        <h1> Hello, World! </h1>
+        <section>
+          <Header />
+        </section>
       </div>
     );
   }
