@@ -4,14 +4,16 @@ import "normalize.css";
 import "./App.css";
 
 import Header from "./Components/Header/Header";
+import CardGenerator from "./Components/CardGenerator/CardGenerator";
 
 class App extends Component{
   render(){
     return(
       <div className="App">
-        <section>
+        <article>
           <Header />
-        </section>
+          <CardGenerator />
+        </article>
       </div>
     );
   }

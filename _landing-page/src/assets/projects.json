@@ -2,31 +2,31 @@
   "projects" : [
     {
       "title": "Tribute Page v1",
-      "link": "./tribute-page-v1/index.html"
+      "link": "https://juzqrios.netlify.app/tribute-page-v1/index.html"
     },
     {
       "title": "Tribute Page v2",
-      "link": "./tribute-page-v2/index.html"
+      "link": "https://juzqrios.netlify.app/tribute-page-v2/index.html"
     },
     {
       "title": "Survey Form",
-      "link": "./survey-form/index.html"
+      "link": "https://juzqrios.netlify.app/survey-form/index.html"
     },
     {
       "title": "Personal Portfolio",
-      "link": "./personal-portfolio/index.html"
+      "link": "https://juzqrios.netlify.app/personal-portfolio/index.html"
     },
     {
       "title": "Random Quote Machine",
-      "link": "./random-quote-machine/index.html"
+      "link": "https://juzqrios.netlify.app/random-quote-machine/index.html"
     },
     {
       "title": "Product Landing Page",
-      "link": "./product-landing-page/index.html"
+      "link": "https://juzqrios.netlify.app/product-landing-page/index.html"
     },
     {
       "title": "Technical Documentation Page",
-      "link": "./technical-documentation-page/index.html"
+      "link": "https://juzqrios.netlify.app/technical-documentation-page/index.html"
     }
   ]
 }
