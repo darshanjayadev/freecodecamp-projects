@@ -7,7 +7,7 @@
 
 [//]: # (Live Demo link)
 <p align="center">
-  <a href="https://juzqrios.netlify.com/">Live Demo</a>
+  <a href="https://juz-freecodecamp-projects.netlify.app/">Live Demo</a>
 </p>
 <p align="center">
   <a href="https://www.figma.com/community/file/902504457634655831/freeCodeCamp-Projects">Figma Design</a>
