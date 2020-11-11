@@ -33,20 +33,6 @@ git clone git@github.com:juzQrios/freecodecamp-projects.git
 
 This repository contains many projects(Monorepo?), refer README of the individual projects in their respective folders.
 
-### Tests
-
-While it is a good practice to test code, this project doesn't have any tests right now but I might add them in future.
-
-### Deployment
-
-Deploy the root directory.
-
-## Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to checkout this project's [Kanban board](https://github.com/juzQrios/freecodecamp-projects/projects/2) or [issues page](https://github.com/juzQrios/freecodecamp-projects/issues).
-
 ## Acknowledgments
 
 * [freeCodeCamp](https://www.freecodecamp.org/)
